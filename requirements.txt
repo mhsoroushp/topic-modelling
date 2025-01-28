@@ -1,0 +1,3 @@
+pip install bertopic
+pip install octis
+pip install transformers
