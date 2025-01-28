@@ -346,9 +346,9 @@ def train_test_split(dataset, train_frac, val_frac, batch_size):
 
     train, val, test = torch.utils.data.random_split(dataset, [int(tot_len*train_frac), int(tot_len*val_frac), tot_len - int(tot_len*train_frac) -  int(tot_len*val_frac)])
     
-    train_loader = torch.utils.data.DataLoader(train, batch_size = batch_size)
-    val_loader = torch.utils.data.DataLoader(val, batch_size = batch_size)
-    test_loader = torch.utils.data.DataLoader(test, batch_size = batch_size)
+    train_loader = torch.utils.data.DataLoader(train, batch_size = batch_size, shuffle=True)
+    val_loader = torch.utils.data.DataLoader(val, batch_size = batch_size, shuffle=True)
+    test_loader = torch.utils.data.DataLoader(test, batch_size = batch_size, shuffle=True)
     
     return train_loader, val_loader, test_loader
     
